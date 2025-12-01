@@ -1,0 +1,23 @@
+name: "📑 Documentation Update"
+description: "Improve Documentation"
+title: "Doc: "
+labels: ["Documentation", "Needs Triage"]
+body:
+    - type: textarea
+      attributes:
+          label: "Missing / unclear documentation"
+          description: "A clear and concise description of what is missing or unclear."
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: "Suggested improvements"
+          description: "A clear and concise description of the improvements you suggest."
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: "Relevant links or files"
+          description: "Add any relevant links or files here."
+      validations:
+          required: false
