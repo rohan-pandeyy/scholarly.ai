@@ -1,21 +1,24 @@
 {
-  "manifest_version": 3,
-  "name": "Scholarly",
-  "version": "1.0.0",
-  "description": "Offline-first YouTube study companion",
-  "action": {
-    "default_popup": "index.html"
-  },
-  "background": {
-    "service_worker": "src/background.ts",
-    "type": "module"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://www.youtube.com/*"],
-      "js": ["src/content.ts"]
-    }
-  ],
-  "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["https://www.youtube.com/*"]
+    "manifest_version": 3,
+    "name": "Scholarly",
+    "version": "1.0.0",
+    "description": "Offline-first YouTube study companion",
+    "action": {},
+    "background": {
+        "service_worker": "src/background.ts",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["src/content.tsx"]
+        },
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["src/inject.ts"],
+            "world": "MAIN"
+        }
+    ],
+    "permissions": ["storage", "activeTab", "scripting"],
+    "host_permissions": ["https://www.youtube.com/*"]
 }

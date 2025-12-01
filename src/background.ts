@@ -1,6 +1,7 @@
-// Background service worker
-console.log("[Scholarly] Background script loaded");
+chrome.runtime.onInstalled.addListener(() => {});
 
-chrome.runtime.onInstalled.addListener(() => {
-  console.log("[Scholarly] Extension installed");
+chrome.action.onClicked.addListener((tab) => {
+    if (tab.id) {
+        chrome.tabs.sendMessage(tab.id, { action: "TOGGLE_SIDEBAR" });
+    }
 });
